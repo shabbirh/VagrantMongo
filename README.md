@@ -27,8 +27,7 @@ vagrant up
 ```
 * The first time you provision the machine may take a longer as a number of archives need to be downloaded.  Following that - as long as you don't destroy the machine - everything should be fast.
 
-
-* You can then access the administration (mongo-express) - but going to ```http://localhost:5000```
+* You can then use a Mongo Client such as RoboMongo or MongoChef to work with your MongoDb.  
 
 ### Note
 This vagrant file has been tested across the following operating systems and virtualization environments:
