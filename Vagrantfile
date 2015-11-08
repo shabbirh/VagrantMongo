@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     sudo chsh -s /bin/zsh vagrant
-    curl https://raw.githubusercontent.com/shabbirh/VagrantVnext/master/zshrc.default > ~/.zshrc
+    curl https://raw.githubusercontent.com/shabbirh/VagrantMongo/master/zshrc.default > ~/.zshrc
     sudo apt-get -y install software-properties-common python-software-properties
     sudo add-apt-repository ppa:djcj/screenfetch
     sudo apt-get update
