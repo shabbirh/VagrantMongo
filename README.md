@@ -11,7 +11,7 @@ The base box that has been used is by the lovely folk at boxcutter (https://vagr
 ### Current Features
 
  * Ubuntu 14.04 LTS
- * MongoDb 3.2 (Release Candidate)
+ * MongoDb (Latest Stable)
  * nodejs and npm
  * zsh
  * Screen fetch
