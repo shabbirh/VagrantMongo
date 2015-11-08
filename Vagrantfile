@@ -6,9 +6,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "boxcutter/ubuntu1404" # using the boxcutter box as it works across vmware, parallels and virtualbox.
 
   config.vm.network "public_network"
-  config.vm.network "forwarded_port", guest: 5000, host: 5000
-
-
+  config.vm.network "forwarded_port", guest: 27017, host: 27017
+  
   # Enable provisioning with a shell script.
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     echo "Making sure OS is properly updated"
@@ -20,30 +19,17 @@ Vagrant.configure(2) do |config|
     curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get update
     sudo apt-get -y install nodejs
-    sudo apt-get -y install build-essential libssl-dev
-    echo "Upgrading Npm and installing the Yoman Generator"
+    sudo apt-get -y install build-essential libssl-dev git git-core
+    echo "Upgrading Npm"
     sudo npm update -g npm  
     echo "Installing MongoDb"
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
     echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
     sudo apt-get update
     sudo apt-get install -y mongodb-org
-    echo "Installing mongodb-express (via npm globally)"
-    echo "Installing PM2"
-    echo "Starting mongodb-express with PM2"
-    #echo "Organising Zsh and your working environment"
-    #git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    #cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    #sudo chsh -s /bin/zsh vagrant
-    #curl https://raw.githubusercontent.com/shabbirh/VagrantMongo/master/zshrc.default > ~/.zshrc
-    #sudo apt-get -y install software-properties-common python-software-properties
-    #sudo add-apt-repository ppa:djcj/screenfetch
-    #sudo apt-get update
-    #sudo apt-get -y install fortune
-    #sudo apt-get -y install screenfetch
-    #sudo apt-get -y install htop
-    
-    echo "You can access the administration Url by going to http://localhost:5000"
+    echo "You can access the mongodb by using the mongodb://localhost:27017 endpoint in your MongoDb management tool (or you can use the"
+    echo "'mongo' command from a shell on your vagrant box."
+    echo ""
   SHELL
 end
 
