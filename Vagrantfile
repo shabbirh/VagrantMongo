@@ -23,8 +23,14 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install build-essential libssl-dev
     echo "Upgrading Npm and installing the Yoman Generator"
     sudo npm update -g npm  
-    sudo npm install -g yo  
-    sudo npm install -g generator-aspnet  
+    echo "Installing MongoDb"
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+    echo "Installing mongodb-express (via npm globally)"
+    echo "Installing PM2"
+    echo "Starting mongodb-express with PM2"
     echo "Organising Zsh and your working environment"
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
@@ -36,14 +42,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install fortune
     sudo apt-get -y install screenfetch
     sudo apt-get -y install htop
-    echo "Installing MongoDb"
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-    sudo apt-get update
-    sudo apt-get install -y mongodb-org
-    echo "Installing mongodb-express (via npm globally)"
-    echo "Installing PM2"
-    echo "Starting mongodb-express with PM2"
+    
     echo "You can access the administration Url by going to http://localhost:5000"
   SHELL
 end
