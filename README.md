@@ -13,10 +13,6 @@ The base box that has been used is by the lovely folk at boxcutter (https://vagr
  * Ubuntu 14.04 LTS
  * MongoDb (Latest Stable)
  * nodejs and npm
- * zsh
- * Screen fetch
- * Fortune
- * Htop
  
 ### Instructions
 

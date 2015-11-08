@@ -31,17 +31,17 @@ Vagrant.configure(2) do |config|
     echo "Installing mongodb-express (via npm globally)"
     echo "Installing PM2"
     echo "Starting mongodb-express with PM2"
-    echo "Organising Zsh and your working environment"
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    sudo chsh -s /bin/zsh vagrant
-    curl https://raw.githubusercontent.com/shabbirh/VagrantMongo/master/zshrc.default > ~/.zshrc
-    sudo apt-get -y install software-properties-common python-software-properties
-    sudo add-apt-repository ppa:djcj/screenfetch
-    sudo apt-get update
-    sudo apt-get -y install fortune
-    sudo apt-get -y install screenfetch
-    sudo apt-get -y install htop
+    #echo "Organising Zsh and your working environment"
+    #git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    #cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    #sudo chsh -s /bin/zsh vagrant
+    #curl https://raw.githubusercontent.com/shabbirh/VagrantMongo/master/zshrc.default > ~/.zshrc
+    #sudo apt-get -y install software-properties-common python-software-properties
+    #sudo add-apt-repository ppa:djcj/screenfetch
+    #sudo apt-get update
+    #sudo apt-get -y install fortune
+    #sudo apt-get -y install screenfetch
+    #sudo apt-get -y install htop
     
     echo "You can access the administration Url by going to http://localhost:5000"
   SHELL
